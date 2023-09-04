@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link-Sharing</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 
 <body>
@@ -16,19 +17,82 @@
                     <span class="logo-name">DevLinks</span>
                 </div>
                 <div class="tab-link">
-                    <button class="link-btn"><img src="Icons/link.png" alt="link"> <span class="link-text">Links</span></button>
-                    <button class="profile-btn"><img src="Icons/" alt="profile"><span class="profile-text">Profile Details</span></button>
+                    <button class="link-btn"><img src="Icons/link.png" alt="link"> <span
+                            class="link-text">Links</span></button>
+                    <button class="profile-btn"><img src="Icons/user copy.png" alt="profile"><span
+                            class="profile-text">Profile Details</span></button>
                 </div>
-                <div class="show-preview"></div>
+                <div class="show-preview">
+                    <button class="preview-btn">Preview</button>
+                </div>
             </div>
-            <div class="side-bar">
+            <div class="main-container">
+                <div class="side-bar">
+                    <div class="mockup">
+                        <img class="phone-design" src="Icons/phone_035 [Converted].png" alt="phone-design">
+                    </div>
+                </div>
+                <div class="links-page">
+                    <div class="links-inner">
+                        <div class="inner-heading">
+                            <h1>Customize Your Links</h3>
+                                <p>Add/edit/remove links bellow and then share all you profiles with the world!</p>
+                        </div>
+                        <div class="links-add">
+                            <button class="link-add-btn">+ Add New Link</button>
+                        </div>
+                        <div class="new-link">
+                            <div class="header-link">
+                                <span>Link #1</span>
+                                <button class="remove-btn">Remove</button>
+                            </div>
+                            <div class="input-platform">
+                                <p>Platform</p>
+                                <select name="platform" id="platform">
+                                    <option value="Github"><span class="github-img"></span>Github</option>
+                                    <option value="Twitter"><span class="Twitter-img"></span>Twitter</option>
+                                    <option value="LinkedIn"><span class="LinkedIn-img"></span>LinkedIn</option>
+                                    <option value="YouTube"><span class="YouTube-img"></span>YouTube</option>
+                                    <option value="Facebook"><span class="Facebook-img"></span>Facebook</option>
+                                </select>
+                            </div>
+                            <div class="input-link">
+                                <p>Enter Link</p>
+                                <input type="url" name="url" id="link" placeholder="https://example.com" required>
+                            </div>
+                        </div>
+                        <div class="save-data">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile-page">
+                    <div class="profile-inner">
+                        <div class="profile-heading">
+                            <h1>Profile Details</h3>
+                                <p class="small-heading">Add your details to create a personal touch to your profile.</p>
+                        </div>
+                        <div class="upload-profile">
+                            <p>Profile Picture</p>
+                            <div class="photo-upload"><input type="file" name="profile-photo" id="profile-photo"></div>
+                            <p class="small-heading">Image must be below 1024x1024px. Use PNG or JPG format.</p>
+                        </div>
+                        <div class="form-details">
+                            <form>
+                                <label for="firstname">First Name<sup>*</sup></label>
+                                <input type="text" name="name" id="firstname">
+                                <label for="lastname">Last Name<sup>*</sup></label>
+                                <input type="text" name="name" id="lastname">
+                                <label for="mail">Email<sup>*</sup></label>
+                                <input type="email" name="email" id="mail">
+                            </form>
+                        </div>
+                        <div class="save-data">
+                            <button class="save-btn">Save</button>
+                        </div>
+                    </div>
 
-            </div>
-            <div class="links-page">
-
-            </div>
-            <div class="profile-page">
-
+                </div>
             </div>
         </div>
     </div>
