@@ -1,9 +1,10 @@
 debugger;
 window.onload = function () {
     pageShow();
+    // checkStorage();
 };
 // Event listener for storing Data
-document.querySelector(".save-btn").addEventListener('click', storeData);
+document.querySelector(".save-btn").addEventListener('click', storeLinkData);
 
 function pageShow() {
     debugger;
@@ -41,6 +42,7 @@ function addLinks() {
 
 function storeLinkData() {
     debugger;
+    let currentIdCounter = parseInt(localStorage.getItem('currentIdCounter')) || 1;
     let platformList = document.getElementById("platform");
     let inputLink = document.getElementById("link-input");
     
