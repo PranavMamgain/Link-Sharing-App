@@ -119,17 +119,23 @@ button {
 .phone-design {
     height: 600px;
     width: 300px;
-    /* background-color: whitesmoke; */
+}
+
+.mockup{
+    position: sticky;
+    top: 80px;
 }
 
 .side-bar {
+    /* min-height: 80vh;
+    max-height: fit-content; */
+    /* position: relative; */
     padding: 20px;
     border-radius: 15px;
     background-color: white;
 }
 
 .links-page {
-    /* display: none; */
     padding: 20px;
     width: 100%;
     border-radius: 15px;
@@ -165,6 +171,11 @@ button {
     width: 100%;
 }
 
+.link-no{
+    display: flex;
+    gap: 20px;
+}
+
 .link-add-btn:hover {
     background-color: #BEADFF;
     cursor: pointer;
@@ -175,6 +186,7 @@ button {
     padding: 15px;
     border-radius: 10px;
     font-size: 15px;
+    margin-bottom: 1.5rem;
 }
 
 .header-link {
@@ -211,15 +223,25 @@ button {
     box-shadow: 0px 0px 20px 3px #BEADFF;
 }
 
-.github-img {}
+.phone-div-link {
+    position: relative;
+    background-color: grey;
+    border-radius: 15px;
+    height: 45px;
+    width: 250px;
+    bottom: 343px;;
+    margin: auto;
+    margin-bottom: 15px;
+    /* left: 28px; */
+}
 
-.Twitter-img {}
+.twitter {}
 
-.LinkedIn-img {}
+.linkedin {}
 
-.YouTube-img {}
+.youtube{}
 
-.Facebook-img {}
+.facebook{}
 
 .input-link {
     margin-top: 15px;
@@ -242,14 +264,14 @@ button {
     justify-content: flex-end;
 }
 
-.save-btn {
+.save-btn, .save-profile-btn {
     padding: 10px 25px;
     background-color: rgb(255, 81, 232);
     color:white;
     width: fit-content;
 }
 
-.save-btn:hover{
+.save-btn:hover, .save-profile-btn:hover{
     background-color: rgb(197, 59, 178);
     cursor: pointer;
 }
