@@ -26,17 +26,19 @@
                     <button class="preview-btn">Preview</button>
                 </div>
             </div>
+
             <div class="main-container">
                 <div class="side-bar">
                     <div class="mockup">
-                        
-                        <img class="phone-design" src="Icons/phone_035 [Converted].png" alt="phone-design">
-                        <div class="githubdiv"></div>
+                        <div class="phone-divs">
+                        </div>
+                        <img class="phone-design" src="Icons/phone_035.png" alt="phone-design">
+                        <!-- </div> -->
+                        <!-- <div class="githubdiv"></div>
                         <div class="twitterdiv"></div>
                         <div class="linkedindiv"></div>
                         <div class="youtubediv"></div>
-                        <div class="facebookdiv"></div>
-                        <div class="phone-div-link"></div>
+                        <div class="facebookdiv"></div> -->
                     </div>
                 </div>
                 <div id="links-page" class="links-page">
@@ -53,11 +55,11 @@
 
                             </div>
                         </ol>
+                        <div class="save-data">
+                            <button class="save-btn">Save</button>
+                        </div>
                     </div>
 
-                    <div class="save-data">
-                        <button class="save-btn">Save</button>
-                    </div>
                 </div>
                 <div id="profile-page" class="profile-page">
                     <div class="profile-inner">
@@ -68,8 +70,14 @@
                         </div>
                         <div class="upload-profile">
                             <p>Profile Picture</p>
-                            <div class="photo-upload"><input type="file" name="profile-photo" id="profile-photo"></div>
-                            <p class="small-heading">Image must be below 1024x1024px. Use PNG or JPG format.</p>
+                            <div class="photo-upload">
+                                <img src="Icons/user (1).png" alt="image-preview" id="preview-image">
+                                <label class="input-styling"> + Upload Image
+                                    <input type="file" accept="image/*" name="profile-photo" id="photo-input">
+                                </label>
+                            </div>
+                            <p class="small-heading float-right">Image must be below 1024x1024px. Use PNG or JPG format.
+                            </p>
                         </div>
                         <div class="form-details">
                             <form>
@@ -85,7 +93,7 @@
                             <button class="save-profile-btn">Save</button>
                         </div>
                     </div>
-    
+
                 </div>
             </div>
         </div>

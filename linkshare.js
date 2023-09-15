@@ -1,23 +1,45 @@
 debugger;
+const addButton = document.querySelector(".link-add-btn");
+const linksList = document.querySelector(".links-list");
 window.onload = function () {
     pageShow();
     // checkStorage();
     showLinkData();
 };
+
 // Event listener 
 document.querySelector(".save-btn").addEventListener('click', storeLinkData);
 document.querySelector(".save-profile-btn").addEventListener('click', storePersonalData);
-document.querySelector(".link-add-btn").addEventListener('click', createLink);
+
+
 document.querySelector(".links-list").addEventListener('click', (event) => {
     if (event.target && event.target.classList.contains("remove-btn")) {
         const divLink = event.target.closest(".new-link");
         if (divLink) {
             const divIndex = Array.from(divLink.parentElement.children).indexOf(divLink);
+            console.log(divIndex);
             divLink.remove();
+            document.querySelector(".link-add-btn").style.cursor = "pointer";
             removeFromLocalStorage(divIndex);
+            removeFromPhoneDisplay(divIndex);
         }
     }
 });
+
+document.querySelector(".link-add-btn").addEventListener('click', () => {
+    if (document.querySelector(".links-list").childElementCount < 5) {
+        // document.querySelector(".link-add-btn").disabled = false;
+        createLink();
+        // if (document.querySelector(".links-list").childElementCount ==5) {
+
+        // }
+    }
+    else {
+        document.querySelector(".link-add-btn").style.cursor = "not-allowed";
+    }
+});
+
+document.querySelector("#photo-input").addEventListener('change', imageShow);
 
 function pageShow() {
     debugger;
@@ -46,7 +68,7 @@ function storeLinkData() {
     debugger;
     let tempArray = JSON.parse(localStorage.getItem("LinkData"));
     let finalArray = tempArray ? tempArray : [];
-
+    debugger;
     let linkElements = document.querySelectorAll(".new-link");
 
     linkElements.forEach(element => {
@@ -70,7 +92,7 @@ function storePersonalData() {
     const dataPersonal = {
         first_name: fName.value,
         last_name: lName.value,
-        mail_id: email.value    
+        mail_id: email.value
     };
 
     localStorage.setItem("PersonalData", JSON.stringify(dataPersonal));
@@ -87,7 +109,8 @@ function checkStorage() {
 
 function showLinkData() {
     debugger;
-    const storedData = JSON.parse(localStorage.getItem("LinkData"));
+    const getData = JSON.parse(localStorage.getItem("LinkData"));
+    let storedData = getData ? getData: [];
     storedData.forEach((boxData) => {
         createLink();
         const boxElements = document.querySelectorAll('.new-link');
@@ -99,6 +122,7 @@ function showLinkData() {
 }
 
 function createLink() {
+    // const ;
     let showList = document.querySelector(".links-list");
     let newLinkElement = document.createElement("div");
     newLinkElement.setAttribute("class", "new-link");
@@ -125,14 +149,24 @@ function createLink() {
     `;
     showList.appendChild(newLinkElement);
 
-    let mockupList = document.querySelector(".mockup");
+    let mockupList = document.querySelector(".phone-divs");
     let newDivElement = document.createElement("div");
     newDivElement.classList.add("phone-div-link");
     mockupList.appendChild(newDivElement);
 }
 
-function removeFromLocalStorage(index){
+function removeFromLocalStorage(index) {
     const storedData = JSON.parse(localStorage.getItem("LinkData"));
-    storedData.splice(index,1);
+    storedData.splice(index, 1);
     localStorage.setItem("LinkData", JSON.stringify(storedData));
+}
+
+function removeFromPhoneDisplay(index) {
+    let phoneDivList = document.querySelectorAll(".phone-div-link");
+    phoneDivList[index].remove();
+}
+
+function imageShow(){
+    const reader = new FileReader();
+    reader.readAsDataURL(this.files[0]);
 }

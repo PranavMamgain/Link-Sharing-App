@@ -94,7 +94,7 @@ button {
     cursor: pointer;
 }
 
-.active-color{
+.active-color {
     background-color: #EEEBFE;
 }
 
@@ -121,15 +121,29 @@ button {
     width: 300px;
 }
 
-.mockup{
+.mockup {
     position: sticky;
-    top: 80px;
+    top: 20px;
+}
+
+.phone-div-link {
+    background-color: grey;
+    border-radius: 15px;
+    height: 45px;
+    width: 250px;
+    margin: auto;
+    margin-bottom: 15px;
+}
+
+.phone-divs {
+    position: absolute;
+    top: 256px;
+    left: 27px;
 }
 
 .side-bar {
-    /* min-height: 80vh;
-    max-height: fit-content; */
-    /* position: relative; */
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     border-radius: 15px;
     background-color: white;
@@ -171,7 +185,7 @@ button {
     width: 100%;
 }
 
-.link-no{
+.link-no {
     display: flex;
     gap: 20px;
 }
@@ -223,25 +237,13 @@ button {
     box-shadow: 0px 0px 20px 3px #BEADFF;
 }
 
-.phone-div-link {
-    position: relative;
-    background-color: grey;
-    border-radius: 15px;
-    height: 45px;
-    width: 250px;
-    bottom: 343px;;
-    margin: auto;
-    margin-bottom: 15px;
-    /* left: 28px; */
-}
-
 .twitter {}
 
 .linkedin {}
 
-.youtube{}
+.youtube {}
 
-.facebook{}
+.facebook {}
 
 .input-link {
     margin-top: 15px;
@@ -262,16 +264,19 @@ button {
 .save-data {
     display: flex;
     justify-content: flex-end;
+    /* margin-right: 40px; */
 }
 
-.save-btn, .save-profile-btn {
+.save-btn,
+.save-profile-btn {
     padding: 10px 25px;
     background-color: rgb(255, 81, 232);
-    color:white;
+    color: white;
     width: fit-content;
 }
 
-.save-btn:hover, .save-profile-btn:hover{
+.save-btn:hover,
+.save-profile-btn:hover {
     background-color: rgb(197, 59, 178);
     cursor: pointer;
 }
@@ -284,7 +289,7 @@ button {
     background-color: white;
 }
 
-.profile-inner{
+.profile-inner {
     padding: 15px 40px;
     display: flex;
     flex-direction: column;
@@ -297,6 +302,69 @@ button {
     margin-top: 15px;
 }
 
-.photo-upload{
+.float-right{
+    float: right;
+}
+
+.photo-upload {
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 15px;
     margin-top: 10px;
+    background-color: #f1f1f2da;
+}
+
+#preview-image {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+
+#photo-input {
+    display: none;
+}
+
+.input-styling {
+    color: #064cf1;;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    width: 200px;
+    align-self: center;
+    border-radius: 15px;
+    background-color:#EEEBFE;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.input-styling:hover{
+    background-color: #aca0f1;
+}
+
+form{
+    /* display: flex; */
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 15px;
+    background-color: #f1f1f2da;
+    align-items: flex-start;
+    /* gap: 15px; */
+    padding: 15px;
+}
+
+form label{
+    display: flex;
+}
+
+form input{
+    border: unset;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px;
+    align-self: center;
 }
