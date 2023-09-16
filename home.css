@@ -3,7 +3,6 @@
     padding: 0;
     margin: 0;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-
 }
 
 body {
@@ -302,7 +301,7 @@ button {
     margin-top: 15px;
 }
 
-.float-right{
+.float-right {
     float: right;
 }
 
@@ -327,7 +326,8 @@ button {
 }
 
 .input-styling {
-    color: #064cf1;;
+    color: #064cf1;
+    ;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -335,16 +335,16 @@ button {
     width: 200px;
     align-self: center;
     border-radius: 15px;
-    background-color:#EEEBFE;
+    background-color: #EEEBFE;
     cursor: pointer;
     transition: 0.5s;
 }
 
-.input-styling:hover{
+.input-styling:hover {
     background-color: #aca0f1;
 }
 
-form{
+form {
     /* display: flex; */
     flex-direction: column;
     text-align: center;
@@ -357,11 +357,11 @@ form{
     padding: 15px;
 }
 
-form label{
+form label {
     display: flex;
 }
 
-form input{
+form input {
     border: unset;
     border-radius: 8px;
     padding: 10px;
