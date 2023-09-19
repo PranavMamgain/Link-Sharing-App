@@ -10,6 +10,7 @@ window.onload = function () {
 // Event listener 
 document.querySelector(".save-btn").addEventListener('click', storeLinkData);
 document.querySelector(".save-profile-btn").addEventListener('click', storePersonalData);
+document.getElementById("photo-input").addEventListener('change', showPreview);
 
 
 document.querySelector(".links-list").addEventListener('click', (event) => {
@@ -27,7 +28,7 @@ document.querySelector(".links-list").addEventListener('click', (event) => {
 });
 
 document.querySelector(".link-add-btn").addEventListener('click', () => {
-    if (document.querySelector(".links-list").childElementCount < 5) {
+     if (document.querySelector(".links-list").childElementCount < 5) {
         // document.querySelector(".link-add-btn").disabled = false;
         createLink();
         // if (document.querySelector(".links-list").childElementCount ==5) {
@@ -38,8 +39,6 @@ document.querySelector(".link-add-btn").addEventListener('click', () => {
         document.querySelector(".link-add-btn").style.cursor = "not-allowed";
     }
 });
-
-document.querySelector("#photo-input").addEventListener('change', imageShow);
 
 function pageShow() {
     debugger;
@@ -110,7 +109,7 @@ function checkStorage() {
 function showLinkData() {
     debugger;
     const getData = JSON.parse(localStorage.getItem("LinkData"));
-    let storedData = getData ? getData: [];
+    let storedData = getData ? getData : [];
     storedData.forEach((boxData) => {
         createLink();
         const boxElements = document.querySelectorAll('.new-link');
@@ -166,7 +165,26 @@ function removeFromPhoneDisplay(index) {
     phoneDivList[index].remove();
 }
 
-function imageShow(){
-    const reader = new FileReader();
-    reader.readAsDataURL(this.files[0]);
+function showPreview(event) {
+    if (event.target.files.length > 0) {
+        // var src = URL.createObjectURL(event.target.files[0]);
+        // console.log(src);
+        // var preview = document.getElementById("preview-image");
+        // preview.src = src;
+        // preview.style.display = "block";
+        const reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.addEventListener('load', () =>{
+            localStorage.setItem('imgProfile', reader.result);
+        });
+        var preview = document.getElementById("preview-image");
+        preview.src = localStorage.getItem('imgProfile');
+    }
 }
+
+function imgStoreAndShow(event) {
+    let img_preview = document.getElementById("preview-image");
+
+    let img_input = document.getElementById("photo-input")
+}
+
